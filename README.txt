@@ -11,28 +11,17 @@ The final tuned model achieved strong performance, especially in differentiating
 * Primary Improvement: Feature Engineering (adding run_rate_per_ball) significantly improved F1-scores for minority classes.
  Requirements
 To run this script, you need Python 3 and the following libraries:
-Library
-	Installation Command
-	Purpose
-	pandas
-	pip install pandas
-	Data manipulation
-	numpy
-	pip install numpy
-	Numerical operations
-	scikit-learn
-	pip install scikit-learn
-	ML model and scaling
-	imbalanced-learn
-	pip install imbalanced-learn
-	SMOTE for handling imbalanced data
-	matplotlib
-	pip install matplotlib
-	Plotting (Confusion Matrix, Feature Importance)
-	seaborn
-	pip install seaborn
-	Enhanced data visualization
-	Data File
+Library           Installation Command           Purpose
+pandas            pip install pandas           Data manipulation
+numpy	          pip install numpy            Numerical operations
+scikit-learn      pip install scikit-learn     ML model and scaling
+imbalanced-learn  pip install imbalanced-learn SMOTE for handling imbalanced data
+matplotlib	      pip install matplotlib       Plotting (Confusion Matrix, Feature Importance)
+seaborn	          pip install seaborn          Enhanced data visualization
+	
+	
+		
+ Data File
 This project requires a data file named:
 * ODI Cricket Data new.csv
 This file must be placed in the same directory as the cricket_model.py script. It should contain relevant columns, including: total_runs, total_balls_faced, and strike_rate.
@@ -54,4 +43,5 @@ Model Methodology Highlights
    1. Feature Engineering: The critical feature run_rate_per_ball (total_runs / total_balls_faced) was added to provide the tree-based model with a clear, direct ratio for better classification.
    2. SMOTE Oversampling: Used to synthesize data for the minority classes (Medium and High SR), preventing the model from becoming biased towards the dominant Low SR class.
    3. StandardScaler: Features were scaled to normalize the input data, although Random Forest is relatively robust to scaling.
+
    4. Optimized Hyperparameters: The Random Forest was configured using parameters (n_estimators=50, max_depth=15, etc.) found via cross-validation.
